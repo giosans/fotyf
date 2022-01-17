@@ -1,0 +1,14 @@
+# # Elastic Beanstalk Files
+
+# # These files are needed to deploy the app as the GitLab CI/CD runner will have to access those. Github Actions may catch up on CI/CD. 
+
+# .elasticbeanstalk/*
+
+# !.elasticbeanstalk/*.cfg.yml
+# !.elasticbeanstalk/*.global.yml
+
+
+
+
+
+

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		
+		<title>Flight of the Yellow Fox</title>
+		<!-- Loading third party fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet" type="text/css">
+		<!-- <link href="/static/fonts/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+		<link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet" type="text/css"  integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<!-- Loading main css file -->
+		<!-- <link rel="stylesheet" href="/static/style.css"> -->
+		{% assets "scss_all" %}
+		<link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+		{% endassets %}
+
+
+		<!--[if lt IE 9]>
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+		<![endif]-->
+
+		<script src="/static/js/jquery-1.11.1.min.js"></script>		
+		<script src="/static/js/plugins.js"></script>
+		<script src="/static/js/app.js"></script>
+
+		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet'/>
+		<style>
+		  
+		  body { margin:0; padding:0; }
+		  #map { position:absolute; top:0; bottom:0; width:100%; max-width: none; min-width: 0px;}
+		</style>
+		
+
+		<link rel="icon" type="image/png" href="static/images/favicon.png">
+		<!--[if IE]><link rel="shortcut icon" href="static/images/favicon.ico"/><![endif]--><!-- Internet Explorer-->         
+	</head>
+
+	<body class="header-collapse">
+
+		<div id="site-content">
+			<header class="site-header">
+				<div class="container">
+					<a href="{{ url_for('index') }}" id="branding">
+						<img src="/static/dummy/logo.png" alt="Site Title">
+						<small class="site-description"></small>
+					</a>
+
+					<div href="{{ url_for('index') }}" id="branding">
+						<img src="/static/dummy/fox_web_small.png" alt="Site Title">
+						<small class="site-description"></small>
+					</div>
+					
+					<nav class="main-navigation">
+						<button type="button" class="toggle-menu"><i class="fa fa-bars"></i></button>
+						<ul class="menu">
+							<li class="menu-item {% block nav_home %}{% endblock %}"><a href="{{ url_for('index') }}">Home</a></li>
+							<li class="menu-item {% block nav_about %}{% endblock %}"><a href="{{ url_for('about') }}">About</a></li>
+						    <li class="menu-item {% block nav_gallery %}{% endblock %}"><a href="{{ url_for('gallery') }}">Gallery</a></li>
+						    <li class="menu-item {% block nav_listen %}{% endblock %}"><a href="{{ url_for('listen') }}">Listen</a></li>
+						    <li class="menu-item {% block nav_contact %}{% endblock %}"><a href="{{ url_for('contact') }}">Contact</a></li>
+						</ul> <!-- .menu -->
+					</nav> <!-- .main-navigation -->
+					<div class="mobile-menu"></div>
+				</div>
+			</header> <!-- .site-header -->
+		{% block body %}
+		{% endblock body %}
+
+        {% block footer %}
+			<footer class="site-footer">
+				<div class="container">
+					<img src="static/dummy/logo-footer.png" alt="Site Name">
+					
+					<address>
+					  <p><!--Grote Markt, Den Haag, NL -->
+					    <!--<br>
+					        <a href="tel:354543543">(555) 555 555 555</a>
+					    <br>-->
+					   <br><a href="mailto:flightyellowfox@gmail.com">flightyellowfox@gmail.com</a>
+					  </p> 
+					</address> 
+					
+					<!-- <form action="#" class="newsletter-form">
+						<input type="email" placeholder="Enter your email to join newsletter...">
+						<input type="submit" class="button cut-corner" value="Subscribe">
+					</form> --> <!-- .newsletter-form -->
+					<div class="social-links">
+					    <a href="https://soundcloud.com/flightyellowfox/" target="_blank">
+					      <i class="fab fa-soundcloud"></i>
+					    </a>
+        	            <a href="https://www.youtube.com/channel/UCm0XWhZ_QAZpHivSDNyFqMw" target="_blank">
+					      <i class="fab fa-youtube"></i>
+					    </a>
+        	            <a href="https://open.spotify.com/artist/1qkm6wZ1BAT2XBj4g2t5Ma" target="_blank">
+					      <i class="fab fa-spotify"></i>
+					    </a>
+					</div>
+					<div class="social-links">
+					    <a href="https://www.facebook.com/flightoftheyellowfox/" target="_blank">
+					      <i class="fab fa-facebook"></i>
+					    </a>
+					    <a href="https://www.instagram.com/flightyellowfox/" target="_blank">
+					      <i class="fab fa-instagram"></i>
+					    </a>
+					    <a href="https://twitter.com/flightyellowfox/" target="_blank">
+					      <i class="fab fa-twitter"></i>
+					    </a>
+					</div>
+
+					    <!--
+					    <a href="#"><i class="fa fa-google-plus"></i></a>
+					    <a href="#"><i class="fa fa-pinterest"></i></a>
+					    -->
+				    </div>
+					<!-- <p class="copy">Copyright 2014 Company Name. Designed by Themezy. All right reserved</p> -->
+				</div>
+			</footer> <!-- .site-footer -->
+	    {% endblock footer %}		
+		
+		</div> <!-- #site-content -->
+	</body>
+
+</html>

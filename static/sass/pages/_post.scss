@@ -1,0 +1,57 @@
+.inner-content{
+	padding: 80px 0;
+}
+.content{
+
+	.entry-title{
+		margin-top: 0;
+		margin-bottom: 30px;
+		@include em(36);
+		color: white;
+	}
+
+	.featured-image{
+		// overflow: hidden;
+		overflow: visible; //gio
+		margin-bottom: 50px;
+		img{
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+
+	.leading{
+		margin-bottom: 50px;
+		color: white;
+		@include em(18);
+
+	    // gio
+		a:link, a:visited {
+		    color: white;
+		    text-decoration: none;
+		    font-weight: bold;
+		}
+
+		a:hover, a:active {
+	    	color: $accent-color;
+	    	font-weight: bold;
+		}
+	}
+	p{
+		margin: 0 0 40px;
+
+            // gio
+		a:link, a:visited {
+		    color: white;
+    		    text-decoration: none;
+		}
+
+		a:hover, a:active {
+		    color: $accent-color;
+    		    text-decoration: none;		    
+		}
+
+	}
+
+
+}

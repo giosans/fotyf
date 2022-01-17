@@ -1,0 +1,23 @@
+image: python:3.6-stretch
+
+stages:
+  - unit_test
+  - deploy
+
+before_script:
+    - pip install -r requirements.txt
+
+test:
+  stage: unit_test
+  script:
+    - python -m unittest discover tests
+
+deploy_aws:
+  stage: deploy
+  before_script:
+    - pip install awsebcli --upgrade --user
+    - chmod +x ./.eb-config.sh
+    - ./.eb-config.sh
+    - git checkout master
+  script:
+    - /root/.local/bin/eb deploy flask-env-1
